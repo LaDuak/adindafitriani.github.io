@@ -37,6 +37,7 @@
                 <li><a href="#keahlian">Keahlian dan Pengalamn</a></li>
                 <li><a href="#proyek">Organisasi</a></li>
                 <li><a href="#kontak" class="btn-contact">Kontak</a></li>
+                <li><a href="#pendukung">Pendukung</a></li>
             </ul>
             <div class="menu-toggle">
                 <i class='bx bx-menu-alt-right'></i>
@@ -136,6 +137,37 @@
     </div>
 </section>
 
+<!-- Section: Pendukung -->
+<section id="pendukung" class="support container">
+    <h2 class="section-title" data-aos="fade-up">Pendukung</h2>
+    <p data-aos="fade-up" data-aos-delay="100" style="text-align:center;">
+        Berikut beberapa sertifikat dan dokumen pendukung yang saya miliki. Klik gambar untuk memperbesar.
+    </p>
+    <div class="support-grid" data-aos="fade-up" data-aos-delay="200" style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center; margin-top:20px;">
+        <!-- Sertifikat 1 -->
+        <div class="support-card" style="width:250px; text-align:center; cursor:pointer;">
+            <img src="mc.jpeg" alt="Sertifikat 1" class="support-img" style="width:100%; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.2);">
+            <h3>Sertifikat Public Speaking</h3>
+        </div>
+        <!-- Sertifikat 2 -->
+        <div class="support-card" style="width:250px; text-align:center; cursor:pointer;">
+            <img src="bendahara.jpeg" alt="Sertifikat 2" class="support-img" style="width:100%; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.2);">
+            <h3>Sertifikat Bendahara BEM</h3>
+        </div>
+        <!-- Sertifikat 3 -->
+        <div class="support-card" style="width:250px; text-align:center; cursor:pointer;">
+            <img src="aktivis.jpeg" alt="Sertifikat 3" class="support-img" style="width:100%; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.2);">
+            <h3>Sertifikat Organisasi</h3>
+        </div>
+    </div>
+</section>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:1000;">
+    <span id="lightbox-close" style="position:absolute; top:20px; right:30px; font-size:2rem; color:white; cursor:pointer;">&times;</span>
+    <img id="lightbox-img" src="" alt="" style="max-width:90%; max-height:90%; border-radius:10px; box-shadow:0 4px 20px rgba(0,0,0,0.5);">
+</div>
+
 
         <!-- Section: Kontak -->
         <section id="kontak" class="contact">
@@ -146,16 +178,16 @@
         </p>
         <div class="contact-buttons" data-aos="fade-up" data-aos-delay="200" style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-top:20px;">
             <!-- Tombol Email -->
-            <a href="mailto:email.anda@example.com" class="btn btn-primary">
+            <a href="mailto:adindaf743@gmail.com" class="btn btn-primary">
                 <i class='bx bx-envelope'></i> Kirim Email
             </a>
             <!-- Tombol WhatsApp / HP -->
-            <a href="https://wa.me/6281234567890" target="_blank" class="btn btn-success">
+            <a href="https://wa.me/6281266450241" target="_blank" class="btn btn-success">
                 <i class='bx bxl-whatsapp'></i> Hubungi via WhatsApp
             </a>
         </div>
         <p data-aos="fade-up" data-aos-delay="300" style="margin-top:15px;">
-            Atau hubungi saya langsung di: <strong>+62 812-3456-7890</strong>
+            hubungi saya langsung diatas <strong></strong>
         </p>
     </div>
 </section>
@@ -174,5 +206,34 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- File JavaScript -->
     <script src="script.js"></script>
+
+    <script>
+    // Lightbox Interaktif
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.getElementById('lightbox-close');
+    const images = document.querySelectorAll('.support-img');
+
+    images.forEach(img => {
+        img.addEventListener('click', () => {
+            lightbox.style.display = 'flex';
+            lightboxImg.src = img.src;
+        });
+    });
+
+    closeBtn.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+        lightboxImg.src = '';
+    });
+
+    // Tutup lightbox jika klik di luar gambar
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            lightbox.style.display = 'none';
+            lightboxImg.src = '';
+        }
+    });
+</script>
+
 </body>
 </html>
